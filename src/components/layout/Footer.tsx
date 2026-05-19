@@ -149,6 +149,14 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-muted-text font-body">
           <p>© {currentYear} Aura Pet Shop. Todos os direitos reservados.</p>
           <div className="flex items-center gap-4">
+            <a
+              href="https://seu-portfolio.com"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-brand transition-colors font-bold"
+            >
+              Desenvolvido com 🧡 por Gabriel
+            </a>
             <span className="text-[10px] uppercase tracking-wider text-brand font-bold border border-brand/20 px-2.5 py-1 rounded-full bg-brand/5">
               Feito com 🧡 para o seu pet
             </span>
