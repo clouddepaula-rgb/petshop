@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --background: #fafafa;
+  --foreground: #1e293b;
+  --brand-primary: #ff7e36;
+  --brand-primary-light: #ff9d66;
+  --brand-primary-dark: #e5651c;
+  --light-card: #ffffff;
+  --muted-text: #64748b;
+  --accent-blue: #38bdf8;
+  --accent-blue-light: #7dd3fc;
+  --border-muted: #e2e8f0;
+}
+
+@theme {
+  --font-heading: "Nunito", sans-serif;
+  --font-body: "Quicksand", sans-serif;
+  
+  --color-brand-light: var(--brand-primary-light);
+  --color-brand: var(--brand-primary);
+  --color-brand-dark: var(--brand-primary-dark);
+  --color-light: var(--background);
+  --color-light-card: var(--light-card);
+  --color-muted-text: var(--muted-text);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-light: var(--accent-blue-light);
+  --color-border-muted: var(--border-muted);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-muted);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary);
+}
+
+/* Base Headings styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* Glassmorphism utility for light theme */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 126, 54, 0.15);
+}
+
+/* Subtle paw pattern background effect instead of grain */
+.paw-bg {
+  position: relative;
+  background-color: var(--background);
+}
+
+.paw-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: radial-gradient(var(--brand-primary) 2px, transparent 2px);
+  background-size: 30px 30px;
+}
+
+/* Custom Scroll Reveal Classes (Intersection Observer) */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-hidden-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-hidden-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translate(0) !important;
+}
+
+/* Custom animated gradient for Hero */
+.friendly-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 126, 54, 0.15) 0%, rgba(56, 189, 248, 0.1) 50%, rgba(250, 250, 250, 0) 100%);
+  filter: blur(60px);
+}
